@@ -18,7 +18,5 @@ const complex& operator / (const complex&, const complex&);
 const complex& operator * (const complex&, double num);
 const complex& operator / (const complex&, double num);
 
-const complex& absol(const complex&);
-
 double re(const complex&);
 double im(const complex&);
