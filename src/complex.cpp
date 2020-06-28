@@ -33,3 +33,10 @@ const complex& operator * (const complex& a, const complex& b) {
 	res.i = (a.i*b.r) + (a.r*b.i);
 	return res;
 }
+
+const complex& operator / (const complex& a, const complex& b) {
+	complex res();
+	res.r = ((a.r*b.r) + (a.i*b.i)) / ((b.r*b.r) + (b.i*b.i));
+	res.i = ((a.i*b.r) - (a.r*b.i)) / ((b.r*b.r) + (b.i*b.i));
+	return res;
+}
