@@ -7,16 +7,17 @@ public:
 	complex(const complex&);
 	complex(double, double);
 	~complex();
+
+	const complex& operator = (const complex&);
 }; 
+
+double re(const complex&);
+double im(const complex&);
 
 const complex& operator + (const complex&, const complex&);
 const complex& operator - (const complex&, const complex&);
 const complex& operator * (const complex&, const complex&);
 const complex& operator / (const complex&, const complex&);
-//const complex& operator = (const complex&, const complex&);
 
 const complex& operator * (const complex&, double num);
 const complex& operator / (const complex&, double num);
-
-double re(const complex&);
-double im(const complex&);

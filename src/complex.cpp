@@ -17,6 +17,12 @@ complex :: complex(double a, double b) {
 
 complex :: ~complex() { };
 
+const complex& complex :: operator = (const complex& c) {
+	this->r = c.r;
+	this->i = c.i;
+	return *this;
+}
+
 double re(const complex& c) {
 	return c.r;
 }
@@ -66,4 +72,3 @@ const complex& operator / (const complex& a, double k) {
 	res.i = a.i / k;
 	return res;
 }
-
