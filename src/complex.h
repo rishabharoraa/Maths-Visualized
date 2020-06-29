@@ -1,3 +1,7 @@
+#ifndef COMPLEX_H
+#define COMPLEX_H
+#include <ostream>
+
 class complex { 
 public:
 	double r;
@@ -21,3 +25,7 @@ const complex& operator / (const complex&, const complex&);
 
 const complex& operator * (const complex&, double num);
 const complex& operator / (const complex&, double num);
+
+std::ostream& operator << (std::ostream&, const complex&);
+
+#endif

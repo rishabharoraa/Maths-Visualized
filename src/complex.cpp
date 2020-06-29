@@ -72,3 +72,8 @@ const complex& operator / (const complex& a, double k) {
 	res.i = a.i / k;
 	return res;
 }
+
+std::ostream& operator << (std::ostream& out, const complex& c) {
+	out << c.r << " + " << c.i << 'i';
+	return out;
+}
