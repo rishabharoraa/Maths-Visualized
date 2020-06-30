@@ -7,8 +7,8 @@
 // p = 0.01,0.85,0.07,0.07
 
 // graph here is a graph in a mathematical sense.
-const int height = 10000, width = 5000;
-bool graph[10000][5000] = { 0 };
+const int height = 10000, width = 5000 * 1.5;
+bool graph[height][width] = { 0 };
 
 struct point {
 	double x;
@@ -24,8 +24,8 @@ struct point {
 };
 
 void plot(const point& p) {
-	int x = (int) (p.x * 1000) + 2182;
-	int y = abs((int) (p.y * 1000) - 10000);
+	int x = (int) ((p.x * 1000) + 2182) * 1.5;
+	int y = abs((int) ((p.y * 1000) - 10000));
 	graph[y][x] = 1;
 }
 
@@ -60,7 +60,7 @@ point f4(const point& p) {
 int main() {
 	point a;
 	graph[0][0] = 1;
-	for(int i = 0; i < 500000; i++) {
+	for(unsigned long i = 0; i < 500000000; i++) {
 		int p = rand() % 100;
 		if(p == 1) {
 			a = f1(a);
@@ -88,10 +88,10 @@ int main() {
 	for(int i = 0; i < height; i++) {
 		for(int j = 0; j < width; j++) {
 			if(graph[i][j] == 1) {
-				img << "0 255 0" << std::endl;
+				img << "0 153 76" << std::endl;
 			}
 			else {
-				img << "255 255 255" << std::endl;
+				img << "0 0 0" << std::endl;
 			} 
 		}
 	} 
