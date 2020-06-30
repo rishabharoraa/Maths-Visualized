@@ -1,3 +1,5 @@
+// I wont be uploading the .ppm output since it is over half a gigabyte
+
 #include <iostream>
 #include <fstream>
 
