@@ -3,6 +3,7 @@
 
 // -2.1820 < x < 2.6558 
 // 0 <= y <9.9983
+// p = 0.01,0.85,0.07,0.07
 
 struct point {
 	double x;
@@ -45,8 +46,25 @@ point f4(const point& p) {
 
 int main() {
 	bool plot[1024][1024] = { 0 };
-
-	double p[4] = {0.01,0.85,0.07,0.07};
-
-
+	point a;
+	plot[a.x][a.y] = 1;
+	for(int i = 0; i < 100; i++) {
+		int p = rand() % 100;
+		if(p == 1) {
+			a = f1(a);
+			plot[a.x][a.y] = 1;
+		}
+		else if(p < 86) {
+			a = f2(a);
+			plot[a.x][a.y] = 1;
+		}
+		else if(p < 94) {
+			a = f3(a);
+			plot[a.x][a.y] = 1;
+		}
+		else {
+			a = f4(a);
+			plot[a.x][a.y] = 1;
+		}
+	}
 }
