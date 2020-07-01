@@ -31,46 +31,51 @@ double im(const complex& c) {
 	return c.i;
 }
 
-const complex& operator + (const complex& a, const complex& b) {
+complex operator + (const complex& a, const complex& b) {
 	complex res;
 	res.r = a.r + b.r;
 	res.i = a.i + b.i;
 	return res;
 }
 
-const complex& operator - (const complex& a, const complex& b) {
+complex operator - (const complex& a, const complex& b) {
 	complex res;
 	res.r = a.r - b.r;
 	res.i = a.i - b.i;
 	return res;
 }
 
-const complex& operator * (const complex& a, const complex& b) {
+complex operator * (const complex& a, const complex& b) {
 	complex res;
 	res.r = (a.r*b.r) - (a.i*b.i);
 	res.i = (a.i*b.r) + (a.r*b.i);
 	return res;
 }
 
-const complex& operator / (const complex& a, const complex& b) {
+complex operator / (const complex& a, const complex& b) {
 	complex res;
 	res.r = ((a.r*b.r) + (a.i*b.i)) / ((b.r*b.r) + (b.i*b.i));
 	res.i = ((a.i*b.r) - (a.r*b.i)) / ((b.r*b.r) + (b.i*b.i));
 	return res;
 }
 
-const complex& operator * (const complex& a, double k) {
+complex operator * (const complex& a, double k) {
 	complex res;
 	res.r = a.r * k;
 	res.i = a.i * k;
 	return res;
 }
 
-const complex& operator / (const complex& a, double k) {
+complex operator / (const complex& a, double k) {
 	complex res;
 	res.r = a.r / k;
 	res.i = a.i / k;
 	return res;
+}
+
+double distanceFromOrigin(const complex& c) {
+	double res = (re(c)*re(c)) - (im(c)*im(c))
+	return abs(res);
 }
 
 std::ostream& operator << (std::ostream& out, const complex& c) {

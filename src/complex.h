@@ -18,13 +18,15 @@ public:
 double re(const complex&);
 double im(const complex&);
 
-const complex& operator + (const complex&, const complex&);
-const complex& operator - (const complex&, const complex&);
-const complex& operator * (const complex&, const complex&);
-const complex& operator / (const complex&, const complex&);
+complex operator + (const complex&, const complex&);
+complex operator - (const complex&, const complex&);
+complex operator * (const complex&, const complex&);
+complex operator / (const complex&, const complex&);
 
-const complex& operator * (const complex&, double num);
-const complex& operator / (const complex&, double num);
+complex operator * (const complex&, double num);
+complex operator / (const complex&, double num);
+
+double distance(const complex&, const complex&);
 
 std::ostream& operator << (std::ostream&, const complex&);
 
